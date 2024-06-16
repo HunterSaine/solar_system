@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import{SUN, rotateSun} from './sun.js'
-import{EARTH, rotateEarth} from './earth.js'
+import{SUN, rotateSun} from './planets/sun.js'
+import{EARTH, rotateEarth} from './planets/earth.js'
 import{ambientLight} from './light.js'
 
 const scene = new THREE.Scene();
