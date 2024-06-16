@@ -11,5 +11,18 @@ camera.position.setZ(30);
 
 renderer.render(scene,camera)
 
+const geometery = new THREE.SphereGeometry(10,100,100)
+const material = new THREE.MeshStandardMaterial({color:0xfdb813, wireframe:false})
+const SUN = new THREE.Mesh(geometery,material);
+scene.add(SUN);
+
+const ambientLight = new THREE.AmbientLight(0xffffff);
+scene.add(ambientLight)
 
 const controls = new OrbitControls( camera, renderer.domElement );
+
+function animate(){
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera)
+}
+animate()
