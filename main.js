@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import{SUN, rotateSun} from './sun.js'
+import{EARTH, rotateEarth} from './earth.js'
 import{ambientLight} from './light.js'
 
 const scene = new THREE.Scene();
@@ -10,10 +11,12 @@ const renderer = new THREE.WebGLRenderer({canvas: document.querySelector('#bg')}
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 camera.position.setZ(30);
+camera.position.setY(30);
 
 renderer.render(scene,camera);
 
-scene.add(SUN);
+scene.add(SUN,EARTH);
+EARTH.position.x= 50;
 scene.add(ambientLight)
 
 //adds grid to scene
@@ -27,6 +30,7 @@ const controls = new OrbitControls( camera, renderer.domElement );
 function animate(){
   requestAnimationFrame(animate);
   rotateSun();
+  rotateEarth();
   renderer.render(scene, camera);
 }
 animate()
