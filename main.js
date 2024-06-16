@@ -21,6 +21,11 @@ scene.add(SUN);
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight)
 
+//adds grid to scene
+const gridHelper = new THREE.GridHelper(200,50)
+scene.add(gridHelper);
+
+//adds controls to move around the scene
 const controls = new OrbitControls( camera, renderer.domElement );
 
 function rotateSun(){
