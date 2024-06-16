@@ -12,9 +12,9 @@ camera.position.setZ(30);
 renderer.render(scene,camera);
 
 //create sun model
-const geometery = new THREE.SphereGeometry(10,50,50)
+const geometry = new THREE.SphereGeometry(10,50,50)
 const material = new THREE.MeshStandardMaterial({color:0xfdb813, wireframe:true})
-const SUN = new THREE.Mesh(geometery,material);
+const SUN = new THREE.Mesh(geometry,material);
 scene.add(SUN);
 
 //add ambient light to scense
