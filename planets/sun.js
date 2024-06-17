@@ -10,5 +10,5 @@ const SUN = new THREE.Mesh(geometry,material);
 const SOLARSYSTEM = new THREE.Mesh(geometry, material);
 
 function rotateSun(){
-    SUN.rotation.y +=.001;
+    SUN.rotation.y +=.005;
 }

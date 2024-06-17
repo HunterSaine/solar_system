@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import{SUN, rotateSun} from './planets/sun.js'
 import{EARTH, rotateEarth} from './planets/earth.js'
 import{ambientLight, pointLight} from './light.js'
-import{MOON} from './planets/moon.js'
+import { MERCURY, rotateMercury } from './planets/mercury.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1,1000);
@@ -17,8 +17,15 @@ camera.position.setY(100);
 renderer.render(scene,camera);
 
 scene.add(SUN);
+SUN.add(MERCURY);
 SUN.add(EARTH);
+
+//positions
+MERCURY.position.x=30;
 EARTH.position.x= 100;
+
+
+
 scene.add(ambientLight);
 //scene.add(pointLight);
 
@@ -34,6 +41,7 @@ function animate(){
   requestAnimationFrame(animate);
   rotateSun();
   rotateEarth();
+  rotateMercury();
   renderer.render(scene, camera);
 }
 animate()
