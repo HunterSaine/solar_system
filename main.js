@@ -23,8 +23,8 @@ scene.add(ambientLight);
 //scene.add(pointLight);
 
 //adds grid to scene
-const gridHelper = new THREE.GridHelper(1000,250)
-scene.add(gridHelper);
+//const gridHelper = new THREE.GridHelper(1000,250)
+//scene.add(gridHelper);
 
 //adds controls to move around the scene
 const controls = new OrbitControls( camera, renderer.domElement );
