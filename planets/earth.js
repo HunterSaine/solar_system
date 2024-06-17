@@ -11,8 +11,9 @@ const earthSystem = new THREE.Object3D();
 
 //EARTH.add(moonSystem);
 //MOON.position.x = 10
-function rotateEarth(EARTHYEAR){
-    EARTH.rotation.y += EARTHYEAR;
+let count = 0;
+function rotateEarth(EARTHDAY){
+    EARTH.rotation.y += EARTHDAY;
 }
 function orbitEarth(EARTHYEAR){
     earthSystem.rotation.y += EARTHYEAR;

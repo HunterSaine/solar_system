@@ -37,13 +37,15 @@ scene.add(ambientLight);
 const controls = new OrbitControls( camera, renderer.domElement );
 
 const EARTHYEAR = 2 * Math.PI * (1/60) * (1/60);
-//updates scene repeatedly
+const EARTHDAY = EARTHYEAR * 365; 
 function animate(){
   requestAnimationFrame(animate);
   //rotateSun();
-  orbitEarth(EARTHYEAR);
-  rotateEarth(EARTHYEAR *60);
-  orbitMercury(EARTHYEAR);
+  //eart orbits the sun one cycle per minute
+  orbitEarth(EARTHYEAR/2);
+  rotateEarth(EARTHDAY/2);
+  orbitMercury(EARTHYEAR/2);
+  rotateMercury(EARTHYEAR/2);
   renderer.render(scene, camera);
 }
 animate()
