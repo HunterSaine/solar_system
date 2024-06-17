@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import {MOON} from './moon';
+import {MOON} from './venus';
 export{MERCURY,mercurySystem, rotateMercury, orbitMercury};
 
 const TextureLoader = new THREE.TextureLoader();
