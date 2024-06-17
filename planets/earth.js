@@ -1,5 +1,4 @@
 import * as THREE from 'three';
-import {MOON} from './venus';
 export{EARTH, earthSystem, rotateEarth, orbitEarth};
 
 const TextureLoader = new THREE.TextureLoader();
@@ -9,9 +8,7 @@ const earthMaterial = new THREE.MeshStandardMaterial({map: TextureLoader.load('.
 const EARTH = new THREE.Mesh(earthGeometry,earthMaterial);
 const earthSystem = new THREE.Object3D();
 
-//EARTH.add(moonSystem);
-//MOON.position.x = 10
-let count = 0;
+
 function rotateEarth(EARTHDAY){
     EARTH.rotation.y += EARTHDAY;
 }
