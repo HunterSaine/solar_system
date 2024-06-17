@@ -1,9 +1,14 @@
 import * as THREE from 'three';
-export{SUN, rotateSun}
+import { texture } from 'three/examples/jsm/nodes/Nodes.js';
+export{SUN, SOLARSYSTEM, rotateSun}
+
+const TextureLoader = new THREE.TextureLoader();
 
 const geometry = new THREE.SphereGeometry(10,50,50)
-const material = new THREE.MeshStandardMaterial({color:0xfdb813, wireframe:true})
+const material = new THREE.MeshStandardMaterial({map: TextureLoader.load('../sunmap.jpg')})
 const SUN = new THREE.Mesh(geometry,material);
+
+const SOLARSYSTEM = new THREE.Mesh(geometry, material);
 
 function rotateSun(){
     SUN.rotation.y +=.001;

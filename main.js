@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import{SUN, rotateSun} from './planets/sun.js'
+import{SOLARSYSTEM, SUN, rotateSun} from './planets/sun.js'
 import{EARTH, rotateEarth} from './planets/earth.js'
 import{ambientLight} from './light.js'
 
@@ -15,8 +15,9 @@ camera.position.setY(30);
 
 renderer.render(scene,camera);
 
-scene.add(SUN,EARTH);
-EARTH.position.x= 50;
+scene.add(SUN);
+SUN.add(EARTH);
+EARTH.position.x= 25;
 scene.add(ambientLight)
 
 //adds grid to scene

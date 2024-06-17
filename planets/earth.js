@@ -1,10 +1,12 @@
 import * as THREE from 'three';
-export{EARTH, rotateEarth}
+export{EARTH, rotateEarth};
+
+const TextureLoader = new THREE.TextureLoader();
 
 const geometry = new THREE.SphereGeometry(2,50,50)
-const material = new THREE.MeshStandardMaterial({color:0xfdb813, wireframe:true})
+const material = new THREE.MeshStandardMaterial({map: TextureLoader.load('../earthmap.jpeg')});
 const EARTH = new THREE.Mesh(geometry,material);
 
 function rotateEarth(){
-    EARTH.rotation.y +=100;
+    EARTH.rotation.y += .005;
 }
