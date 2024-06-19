@@ -5,6 +5,7 @@ import{EARTH, earthSystem, rotateEarth, orbitEarth} from './planets/earth.js'
 import{ambientLight, pointLight} from './light.js'
 import { MERCURY, rotateMercury, orbitMercury, mercurySystem} from './planets/mercury.js';
 import { VENUS, venusSystem, orbitVenus, rotateVenus } from './planets/venus.js';
+import { MARS,marsSystem,orbitMars,rotateMars } from './planets/mars.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1,1000);
@@ -18,16 +19,19 @@ camera.position.setX(-70);
 
 renderer.render(scene,camera);
 
-scene.add(SUN,earthSystem, mercurySystem, venusSystem);
+scene.add(SUN,earthSystem, mercurySystem, venusSystem, marsSystem);
 earthSystem.add(EARTH);
 venusSystem.add(VENUS);
 mercurySystem.add(MERCURY);
+marsSystem.add(MARS)
 
 //positions
 MERCURY.position.x=50;
 MERCURY.position.z=-50
 VENUS.position.x=-100;
 EARTH.position.x= 200;
+MARS.position.x=240;
+MARS.position.y=240;
 
 
 
@@ -53,6 +57,8 @@ function animate(){
   rotateMercury(EARTHYEAR);
   orbitVenus(EARTHYEAR/.615);
   rotateVenus(EARTHYEAR);
+  rotateMars(EARTHDAY);
+  orbitMars(EARTHYEAR);
   renderer.render(scene, camera);
 }
 animate()
