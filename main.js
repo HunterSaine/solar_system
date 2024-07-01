@@ -38,7 +38,8 @@ EARTH.position.x = 150;
 //MARS.position.x = 200;
 MARS.position.z = -200;
 JUPITER.position.x = 350;
-SATURN.position.x = 430;
+// SATURN.position.x = 450;
+SATURN.position.z = -450;
 
 
 
