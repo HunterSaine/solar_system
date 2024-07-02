@@ -4,7 +4,7 @@ export { URANUS, uranusSystem, rotateUranus, orbitUranus };
 const TextureLoader = new THREE.TextureLoader();
 
 const Geometry = new THREE.SphereGeometry(10, 50, 50)
-const Material = new THREE.MeshStandardMaterial({ map: TextureLoader.load('/textures/uranusmap.jpeg') });
+const Material = new THREE.MeshStandardMaterial({ map: TextureLoader.load('/textures/uranusmap.jpg') });
 const URANUS = new THREE.Mesh(Geometry,Material);
 const uranusSystem = new THREE.Object3D();
 

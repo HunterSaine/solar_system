@@ -8,6 +8,7 @@ import { VENUS, venusSystem, orbitVenus, rotateVenus } from './planets/venus.js'
 import { MARS, marsSystem, orbitMars, rotateMars } from './planets/mars.js';
 import { JUPITER,jupiterSystem,orbitJupiter,rotateJupiter } from './planets/jupiter.js';
 import { SATURN, saturnSystem, rotateSaturn, orbitSaturn } from './planets/saturn.js';
+import { uranusSystem, URANUS,rotateUranus, orbitUranus } from './planets/uranus.js';
 
 
 const scene = new THREE.Scene();
@@ -22,13 +23,14 @@ camera.position.setX(-70);
 
 renderer.render(scene, camera);
 
-scene.add(SUN, earthSystem, mercurySystem, venusSystem, marsSystem, jupiterSystem, saturnSystem,);
+scene.add(SUN, earthSystem, mercurySystem, venusSystem, marsSystem, jupiterSystem, saturnSystem,uranusSystem);
 earthSystem.add(EARTH);
 venusSystem.add(VENUS);
 mercurySystem.add(MERCURY);
 marsSystem.add(MARS);
 jupiterSystem.add(JUPITER);
 saturnSystem.add(SATURN);
+uranusSystem.add(URANUS);
 
 //positions
 MERCURY.position.x = 50;
@@ -40,6 +42,7 @@ MARS.position.z = -200;
 JUPITER.position.x = 350;
 // SATURN.position.x = 450;
 SATURN.position.z = -450;
+URANUS.position.x = -550;
 
 
 
@@ -71,6 +74,8 @@ function animate() {
   orbitJupiter(EARTHYEAR);
   orbitSaturn(EARTHYEAR);
   rotateSaturn(EARTHDAY);
+  orbitUranus(EARTHYEAR);
+  rotateUranus(EARTHDAY);
   renderer.render(scene, camera);
 }
 animate()
